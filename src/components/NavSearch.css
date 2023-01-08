@@ -1,0 +1,26 @@
+.navsearch {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    height: 4.5rem;
+    font-weight: bolder;
+    gap: 2rem;
+}
+
+.navsearch h1 {
+    margin-top: 0.5rem;
+}
+
+.navsearch form input {
+    width: 58vw;
+    border: none;
+}
+
+.navsearch form input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 1.5rem;
+  }

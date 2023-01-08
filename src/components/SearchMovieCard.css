@@ -1,0 +1,39 @@
+.searchmoviecard {
+    display: flex;
+    border: 1px solid lightgray;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    min-width: 50vw;
+
+}
+
+.searchmoviecard a {
+    color: black;
+    font-size: 2rem;
+}
+
+.searchmoviecard h3 {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: rgb(116, 116, 116);
+}
+
+.searchmoviecard img {
+    width: 10rem;
+    height: 100%;
+}
+
+.otherinfos {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.otherinfos p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }

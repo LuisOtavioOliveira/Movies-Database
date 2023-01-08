@@ -1,0 +1,40 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(12, 52, 85) ;
+    padding: 2rem 40rem;
+    width: 100%;
+    max-height: 20vh;
+    gap: 20rem;
+    font-size: 1.5rem;
+    font-weight: 60;
+}
+
+.navbar-container ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    color: white;
+    align-items: center;
+    font-weight: 700;
+}
+
+.navbarul1 p {
+    cursor: pointer;
+}
+
+.buttonsearch {
+    background-color: transparent;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+.fontweightnav {
+    font-weight: 700;
+}

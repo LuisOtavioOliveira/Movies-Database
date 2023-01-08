@@ -1,0 +1,54 @@
+.fixedsearch {
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    padding: 10rem 10rem;
+    background: linear-gradient(rgba(9, 50, 68, 0.4), rgba(5, 5, 87, 0.4)), url('https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/hPea3Qy5Gd6z4kJLUruBbwAH8Rm.jpg');
+    background-repeat: no-repeat;
+    height: 40%;
+    width: 70%;
+    background-size:cover;
+    background-position:initial;
+    color: white;
+    justify-content: center;
+    
+}
+
+.fixedsearch h1 {
+    font-size: 4em;
+}
+
+.fixedsearch h3 {
+    font-size: 3em;
+}
+
+.fixedsearch form input {
+    width: 100%;
+    padding: 1.3rem;
+    border-radius: 5rem;
+    border: none;
+    position: relative;
+
+}
+
+
+
+input:focus {
+    outline: none;
+}
+
+.fixedsearch form button {
+    padding: 1.3rem;
+    border-radius: 5rem;
+    border: none;
+    position: absolute;
+    margin-left: -5rem;
+    background: linear-gradient(to right, rgb(20, 143, 201, 1) 0%, rgb(42, 151, 240) 100%);
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.fixedsearch form button:hover {
+    color: black;
+}

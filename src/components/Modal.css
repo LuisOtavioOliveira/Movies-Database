@@ -1,0 +1,42 @@
+.teste {
+position: absolute;
+z-index: 2;
+color: black;
+background-color: rgb(12, 52, 85);
+display: flex;
+flex-direction: column;
+margin-left: -1.5rem;
+padding-top: 2rem;
+border-radius: 1rem;;
+}
+
+.teste ul {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 0.8rem;
+    border-bottom-left-radius: 0.9rem;
+    border-bottom-right-radius: 0.9rem;
+    border: 0.01rem solid lightgray;
+}
+
+.linkmodal {
+    color: black;
+}
+
+.limodal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-weight: 400;
+    line-height: 20px;;
+}
+
+.limodal a:hover {
+    color: lightblue;
+}

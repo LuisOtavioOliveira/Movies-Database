@@ -1,0 +1,51 @@
+.moviecard {
+    display: flex;
+    flex-direction: column;
+    max-width: 15rem ;
+    gap: .5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.moviecard img {
+    width: 15rem;
+    height: 20rem;
+}
+
+.moviecard h2 {
+    font-size: 1.5rem;
+}
+
+.moviecard h2 a {
+    color: black;
+}
+.moviecard h2 a:hover {
+    color: lightblue;
+}
+
+
+.moviecard h3 {
+    font-size: 1.5rem;
+}
+
+.moviecard h3.low {
+    color: red;
+}
+
+.moviecard h3.medium {
+    color: rgb(212, 212, 21);
+}
+
+.moviecard h3.high {
+    color: green;
+}
+
+.moviecard h3 span {
+    color: black;
+}
+
+.moviecard p {
+    color: rgb(119, 119, 119);
+    font-size: 1.5rem;
+}
+

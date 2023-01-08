@@ -1,0 +1,10 @@
+.Loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 50rem;
+}
+
+.Loading img {
+    width: 10rem;
+}

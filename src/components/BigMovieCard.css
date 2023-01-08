@@ -1,0 +1,60 @@
+.big {
+    display: flex;
+    flex-direction: column;
+    max-width: 19.2rem;
+    border: 1px solid lightgray;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.border {
+    padding: 0.7rem;
+}
+
+.big a {
+    color: black;
+}
+
+.big h2 a:hover {
+    color: lightblue;
+}
+
+.big img {
+    width: 19rem;
+    height: 29rem;
+
+}
+
+.big h2 {
+    font-size: 1.6rem;
+}
+
+.big h3 {
+    font-size: 1.5rem;
+}
+
+.big h3.low {
+    color: red;
+}
+
+.big h3.medium {
+    color: rgb(214, 214, 27);
+}
+
+.big h3.high {
+    color: green;
+}
+
+.bigmargin {
+    margin-left: 17rem;
+}
+
+.big p {
+    
+    font-size: 1.3rem;
+    color: rgb(139, 137, 137);
+}
+
+.span2 {
+    color: black;
+}

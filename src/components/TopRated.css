@@ -1,0 +1,59 @@
+.toprated {
+    width: 65%;
+    display: flex;
+    padding-top: 5rem;
+    flex-direction: column;
+}
+
+.toprated h2 {
+    font-size: 2.3rem;
+}
+
+.categories {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.buttonsdiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.1rem solid rgb(12, 52, 85);
+    border-radius: 2rem;
+}
+
+.buttonsdiv p {
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.buttonsdiv p.active {
+    background-color: rgb(12, 52, 85);
+    color: white;
+  }
+
+  .moviesexib {
+    display: flex;
+    gap: 2rem;
+    overflow-x: scroll;
+    
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.4rem;
+    height: 0.7rem;
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(214, 214, 214);
+    border-radius: 4px;
+  }
+
+  .divrelative {
+    position: relative;
+  }
