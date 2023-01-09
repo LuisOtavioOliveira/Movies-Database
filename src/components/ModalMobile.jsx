@@ -6,19 +6,21 @@ import {BiHome} from 'react-icons/bi'
 const ModalMobile = () => {
   return (
     <div className='modalmobile'>
-        <p className='house'><a  href='/'> <BiHome/> </a></p>
+        <p>
+        <Link to='/'> <BiHome></BiHome> </Link>
+        </p>
         <h2> Filmes: </h2>
-        <a href='/popular'> Populares </a>
-        <a href=''> Em Cartaz </a>
-        <a href=''> Próximas estreias </a>
-        <a href=''> Bem Avaliados </a>
+        <Link to='/popular'> Populares </Link>
+        <Link> Em Cartaz </Link>
+        <Link> Próximas Estreias </Link>
+        <Link> Bem Avaliados </Link>
         <h2> Séries: </h2>
-        <a href=''> Populares </a>
-        <a href=''> Em exibição hoje </a>
-        <a href=''> Na TV </a>
-        <a href=''> Bem avaliadas </a>
+        <Link> Populares </Link>
+        <Link> Em exibição hoje </Link>
+        <Link> Na TV </Link>
+        <Link> Bem Avaliadas </Link>
         <h2>Pessoas:</h2>
-        <a href=''> Populares </a>
+        <Link> Populares </Link>
 
 
     </div>

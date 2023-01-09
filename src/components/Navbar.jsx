@@ -68,7 +68,7 @@ const Navbar = () => {
           </li>
         </ul>
     </div>
-    {open2 && <ModalMobile></ModalMobile>}
+    {open2 && <div onClick={() => setOpen2(false)}> <ModalMobile></ModalMobile> </div> }
     {open && <NavSearch></NavSearch>}
     </div>
   )
