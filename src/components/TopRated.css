@@ -3,15 +3,20 @@
     display: flex;
     padding-top: 5rem;
     flex-direction: column;
+    justify-content: center;
 }
 
 .toprated h2 {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+
 }
 
 .categories {
     display: flex;
     gap: 1.5rem;
+    
 }
 
 .buttonsdiv {
@@ -28,7 +33,7 @@
     border-radius: 2rem;
     background-color: white;
     cursor: pointer;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 .buttonsdiv p.active {
@@ -57,3 +62,64 @@
   .divrelative {
     position: relative;
   }
+
+  @media screen and (max-width: 600px) {
+    .toprated {
+      width: 100%;
+      padding: 2rem;
+    }
+    .toprated h2 {
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+  }
+
+  .buttonsdiv p {
+    font-size: 1.4rem;
+    padding: 0.7rem 1.8rem;
+  }
+  }
+
+  @media screen and (max-width: 360px) {
+    .toprated {
+      width: 100%;
+      padding: 2rem;
+    }
+    .toprated h2 {
+      font-size: 1.7rem;
+      display: flex;
+      align-items: center;
+  }
+
+  .buttonsdiv p {
+    font-size: 1.4rem;
+    padding: 0.7rem 1.8rem;
+  }
+  }
+
+  .invisible {
+    display: none;
+  }
+
+
+  @media screen and (max-width: 280px) {
+    .toprated {
+      width: 100%;
+      padding: 2rem;
+    }
+    .toprated h2 {
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+  }
+
+  .buttonsdiv {
+    padding: 0rem;
+  }
+
+  .buttonsdiv p {
+    font-size: 1.2rem;
+    padding: 0.9rem 1.8rem;
+  }
+  }
+

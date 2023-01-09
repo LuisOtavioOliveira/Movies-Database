@@ -10,6 +10,7 @@
 .searchmoviecard a {
     color: black;
     font-size: 2rem;
+    font-weight: 700;
 }
 
 .searchmoviecard h3 {
@@ -28,12 +29,39 @@
     flex-direction: column;
     padding: 2rem;
     gap: 2rem;
+    
 }
 
 .otherinfos p {
-    overflow: hidden;
-    text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 980px) {
+
+    .searchmoviecard {
+      max-height: 14rem;
+    }
+
+    .searchmoviecard a {
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    .searchmoviecard h3 {
+        font-size: 1.44rem;
+    }
+
+    .searchmoviecard p {
+        font-size: 1.44rem;
+    }
+
+    .searchmoviecard img {
+        max-height: 14rem;
+        min-width: 9.4rem;
+    }
   }

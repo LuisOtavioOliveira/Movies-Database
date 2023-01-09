@@ -1,10 +1,25 @@
 .PopularMovies {
     min-height: 86vh;
-    width: 65%;
-    padding: 10rem 30rem;
+    width: 100%;
     display: flex;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    justify-content: center;
     font-size: 1.5rem;
     gap: 3rem;
+}
+
+@media screen and (max-width: 980px) {
+    .PopularMovies {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem ;
+    }
+    .moviegrid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .buttonfilter {
@@ -113,6 +128,7 @@ border-bottom-left-radius: 0px;
     max-width: 100rem;
     min-width:  60vw;
     min-height: 86vh;
+    justify-content: center;
 }
 
 .loadmore {
@@ -124,9 +140,14 @@ border-bottom-left-radius: 0px;
     color: white;
     border-radius: 0.5rem;
     cursor: pointer;
-    width: 109rem;
+    width: 95%;
 }
 
 .loadmore:hover {
     background-color: rgb(52, 129, 192);
 }
+
+.mobilegrid {
+    display: none;
+}
+

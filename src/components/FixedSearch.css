@@ -5,13 +5,26 @@
     padding: 10rem 10rem;
     background: linear-gradient(rgba(9, 50, 68, 0.4), rgba(5, 5, 87, 0.4)), url('https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/hPea3Qy5Gd6z4kJLUruBbwAH8Rm.jpg');
     background-repeat: no-repeat;
-    height: 40%;
     width: 70%;
     background-size:cover;
     background-position:initial;
     color: white;
     justify-content: center;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
     
+}
+
+@media screen and (max-width: 600px) {
+    .fixedsearch {
+        width: 100%;
+        height: 10%;
+        border-radius: 0px;
+        padding: 4rem;
+    }
+    .fiexedsearch form input {
+        min-width: 100%;
+    }
 }
 
 .fixedsearch h1 {
@@ -44,7 +57,7 @@ input:focus {
     position: absolute;
     margin-left: -5rem;
     background: linear-gradient(to right, rgb(20, 143, 201, 1) 0%, rgb(42, 151, 240) 100%);
-    color: white;
+    color: white;   
     cursor: pointer;
     font-weight: 700;
 }

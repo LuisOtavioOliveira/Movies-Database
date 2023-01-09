@@ -42,10 +42,10 @@ const SearchMovieCard = ({movie}) => {
 <img src={movie.poster_path !== null ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : `https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg` } alt={movie.title} />
 <div className='otherinfos'>
 <div>
-<Link> {movie.title} </Link>
-    <h3> {day !== '' &&  `${day} de ${month} de ${year}` } </h3>
+<Link className='backspace'> {movie.title} </Link>
+    <h3 className='backspace'> {day !== '' &&  `${day} de ${month} de ${year}` } </h3>
 </div>
-    <p className='backspace'> {movie.overview.length > 260 ? `${string}...`: movie.overview} </p>
+    <p className='backspace'> {movie.overview} </p>
 </div>
     </div>
   )

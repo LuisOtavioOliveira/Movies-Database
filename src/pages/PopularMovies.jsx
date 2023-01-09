@@ -7,6 +7,7 @@ import MovieCard from '../components/MovieCard';
 import BigMovieCard from '../components/BigMoviecard';
 import Loading from '../components/Loading';
 import { Link } from 'react-router-dom';
+import SearchMovieCard from '../components/SearchMovieCard';
 
 const PopularMovies = () => {
 
@@ -111,7 +112,7 @@ useEffect(() => {
 
         <div className='moviegrid'>
           <div  className='moviegrid'>
-          {popularMovies.length > 0 ? popularMovies.map((movie) =><BigMovieCard movie={movie}> </BigMovieCard>) : <Loading></Loading>} 
+          {popularMovies.length > 0 ?  popularMovies.map((movie) =><BigMovieCard movie={movie}> </BigMovieCard>) : <Loading></Loading>} 
           </div>
             
             

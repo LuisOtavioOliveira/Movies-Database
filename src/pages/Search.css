@@ -1,10 +1,11 @@
 .search {
     min-height: 86vh;
     width: 100%;
-    padding: 10rem 30rem;
     display: flex;
+    justify-content: center;
     font-size: 1.5rem;
     gap: 3rem;
+    padding: 8rem 20rem;
 
 }
 
@@ -66,4 +67,18 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    min-width: 65vw;
+}
+
+@media screen and (max-width: 980px) {
+    .search {
+        flex-wrap: wrap;
+        padding: 2rem;
+    }
+
+    .exib {
+        justify-content: center;
+        width: 100%;
+    }
+
 }

@@ -7,9 +7,18 @@
     border-bottom-right-radius: 1rem;
 }
 
+.big img {
+    width: 19rem;
+    height: 29rem;
+
+}
+
+
 .border {
     padding: 0.7rem;
 }
+
+
 
 .big a {
     color: black;
@@ -19,11 +28,7 @@
     color: lightblue;
 }
 
-.big img {
-    width: 19rem;
-    height: 29rem;
 
-}
 
 .big h2 {
     font-size: 1.6rem;
@@ -57,4 +62,64 @@
 
 .span2 {
     color: black;
+}
+
+@media screen and (max-width:600px) {
+    .big {
+        display: flex;
+        flex-direction: column;
+        max-width: 15.2rem ;
+        min-height: 35rem;
+        max-height: 35rem;
+        gap: .5rem;
+        padding-bottom: 2rem;
+    }
+    
+    .big img {
+        max-width: 15rem;
+        max-height: 20rem;
+    }
+    
+    .big h2 {
+        font-size: 1.5rem;
+    }
+    
+    .big h2 a {
+        color: black;
+    }
+    .big h2 a:hover {
+        color: lightblue;
+    }
+    
+    
+    .big h3 {
+        font-size: 1.5rem;
+    }
+    
+    .big h3.low {
+        color: red;
+    }
+    
+    .big h3.medium {
+        color: rgb(212, 212, 21);
+    }
+    
+    .big h3.high {
+        color: green;
+    }
+    
+    .big h3 span {
+        color: black;
+    }
+    
+    .big p {
+        color: rgb(119, 119, 119);
+        font-size: 1.5rem;
+    }
+
+    .bigmargin {
+        margin-left: 13rem;
+    }
+    
+    
 }

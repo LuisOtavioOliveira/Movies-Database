@@ -6,6 +6,10 @@ import { useState } from 'react';
 import {AiOutlineClose} from 'react-icons/ai'
 import Modal from './Modal';
 import NavSearch from './NavSearch';
+import {GiHamburgerMenu} from 'react-icons/gi'
+import ModalMobile from './ModalMobile';
+import { useEffect } from 'react';
+import {BiHome} from 'react-icons/bi'
 
 const Navbar = () => {
 
@@ -13,6 +17,11 @@ const Navbar = () => {
   const [visible2, setVisible2] = useState(false)
   const [visible3, setVisible3] = useState(false)
   const [open, setOpen] = useState(false)
+  const [open2, setOpen2] = useState(false)
+
+  useEffect(() => {
+    setOpen2(false)
+  },[]);
  
 
 
@@ -20,7 +29,7 @@ const Navbar = () => {
     <div>
       <div className='navbar-container'>
         <ul className='navbarul1'>
-            <li><Link to='/' className='white'> Home </Link></li>
+            <li className='here'><Link to='/' className='white'> <BiHome></BiHome> </Link></li>
             <li onClick={() => setVisible(true)} onMouseOver={() => setVisible(true)} onMouseLeave={() => setVisible(false)}> 
               <p className='fontweightnav'> Filmes </p>
               {visible && <Modal tipo="movies"/>}
@@ -44,6 +53,22 @@ const Navbar = () => {
         </ul>
         
     </div>
+    
+    <div className='navbar-container mobilenav'>
+        <ul>
+          <li>
+
+           {open2 ? <button onClick={() => setOpen2(false)} className='buttonsearch'> <GiHamburgerMenu></GiHamburgerMenu> </button> : <button onClick={() => setOpen2(true)} className='buttonsearch'> <GiHamburgerMenu></GiHamburgerMenu> </button>} 
+          </li>
+         
+        </ul>
+        <ul>
+        <li>
+          {open ? <button onClick={() => setOpen(false)} className='buttonsearch'> <AiOutlineClose></AiOutlineClose>  </button> : <button onClick={() => setOpen(true)} className='buttonsearch'> <BsSearch className='searchbutton'></BsSearch> </button>}
+          </li>
+        </ul>
+    </div>
+    {open2 && <ModalMobile></ModalMobile>}
     {open && <NavSearch></NavSearch>}
     </div>
   )

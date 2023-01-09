@@ -13,6 +13,9 @@ const TopRated = () => {
     const [topSeries, setTopSeries] = useState([])
     const [type, setType] = useState('movies')
 
+
+  
+
     const getTopRatedMovies = async (url) => {
       const res = await fetch(url);
       const data = await res.json();
