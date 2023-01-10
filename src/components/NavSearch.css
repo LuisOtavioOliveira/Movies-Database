@@ -21,6 +21,12 @@
     border: none;
 }
 
-.navsearch form input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.navsearch form input::-webkit-input-placeholder { 
     font-size: 1.5rem;
   }
+
+@media screen and (max-width:600px) {
+    .navsearch form input::-webkit-input-placeholder { 
+        font-size: 1.2rem;
+      }
+}

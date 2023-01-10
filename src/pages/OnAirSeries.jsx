@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import SearchMovieCard from '../components/SearchMovieCard';
 import BigSerieCard from '../components/BigSerieCard';
 
-const PopularSeries = () => {
+const OnAirSeries = () => {
 
     const [page, setPage] = useState(1)
     const [open, setOpen] = useState(false)
@@ -76,7 +76,7 @@ const getOnTvSeries = async (url) => {
 
 const NextPage = () => {
 setPage(page + 1)
-    const urlnextpage = `https://api.themoviedb.org/3/tv/popular?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR&page=${page}`
+    const urlnextpage = `https://api.themoviedb.org/3/tv/airing_today?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR&page=${page}`
   getNextPage(urlnextpage)
   
 
@@ -84,7 +84,7 @@ setPage(page + 1)
 }
 
 useEffect(() => {
-  const urlPopularMovies = `https://api.themoviedb.org/3/tv/popular?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR&page=${page}`
+  const urlPopularMovies = `https://api.themoviedb.org/3/tv/airing_today?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR&page=${page}`
   getOnTvSeries(urlPopularMovies)
   setPage(page + 1)
 
@@ -102,7 +102,7 @@ useEffect(() => {
                 <button onMouseLeave={()=> NoHover('topratedseries')} id='topratedseries' onClick={() => SetOrder('topratedseries') } className={`buttongenre order`} > Bem avaliadas </button>
                 <button onMouseLeave={()=> NoHover('popularseries')} id='popularseries' onClick={() => SetOrder('popularseries') } className={` buttongenre order`} > Populares </button>
                 <button onMouseLeave={()=> NoHover('ontvseries')} id='ontvseries' onClick={() => SetOrder('ontvseries') } className={` buttongenre order`} > Na TV </button>
-          
+                <button onMouseLeave={()=> NoHover('onairseries')} id='onairseries' onClick={() => SetOrder('onairseries') } className={` buttongenre order`} > Em exibição hoje </button>
                </div>
             </div>}
 
@@ -113,7 +113,7 @@ useEffect(() => {
       
         
         <div className='moviegrid'>
-        <h2 className='titlemovies'> Séries populares: </h2>
+        <h2 className='titlemovies'> Em exibição hoje: </h2>
           <div  className='moviegrid'>
           {onTvSeries.length > 0 ?  onTvSeries.map((movie) =><BigSerieCard movie={movie}> </BigSerieCard>) : <Loading></Loading>} 
           </div>
@@ -126,4 +126,4 @@ useEffect(() => {
   )
 }
 
-export default PopularSeries
+export default OnAirSeries

@@ -93,14 +93,16 @@ useEffect(() => {
 
 
   return (
-    <div className='PopularMovies'>
+    <div className='Movies'>
         <div className='filter'>
-            <button className={`buttonfilter ${open1 && 'openfilter'}`} onClick={open1 ? () => setOpen1(false) : () => setOpen1(true)}  > Ordenar {open1 ? <AiOutlineArrowDown></AiOutlineArrowDown> : <AiOutlineArrowRight></AiOutlineArrowRight> } </button>
+            <button className={`buttonfilter ${open1 && 'openfilter'}`} onClick={open1 ? () => setOpen1(false) : () => setOpen1(true)}  > Exibir {open1 ? <AiOutlineArrowDown></AiOutlineArrowDown> : <AiOutlineArrowRight></AiOutlineArrowRight> } </button>
             {open1 && <div className='genresfilter'>
-                <p> Ordenar por: </p>
+                <p> Mostrar Filmes:: </p>
                <div>
-                <button onMouseLeave={()=> NoHover('toprated')} id='toprated' onClick={() => SetOrder('toprated') } className={`buttongenre order`} > Classificação dos usuários </button>
-                <button onMouseLeave={()=> NoHover('popular')} id='popular' onClick={() => SetOrder('popular') } className={` buttongenre order`} > Popularidade </button>
+                <button onMouseLeave={()=> NoHover('topratedmovies')} id='topratedmovies' onClick={() => SetOrder('topratedmovies') } className={`buttongenre order`} > Bem avaliados </button>
+                <button onMouseLeave={()=> NoHover('popularmovies')} id='popularmovies' onClick={() => SetOrder('popularmovies') } className={` buttongenre order`} > Populares </button>
+                <button onMouseLeave={()=> NoHover('onairmovies')} id='onairmovies' onClick={() => SetOrder('onairmovies') } className={` buttongenre order`} > Em Cartaz </button>
+                <button onMouseLeave={()=> NoHover('nextmovies')} id='nextmovies' onClick={() => SetOrder('nextmovies') } className={` buttongenre order`} > Estreia em breve</button>
                </div>
             </div>}
 
@@ -109,8 +111,9 @@ useEffect(() => {
         </div>
         
       
-
+        
         <div className='moviegrid'>
+        <h2 className='titlemovies'> Filmes populares: </h2>
           <div  className='moviegrid'>
           {popularMovies.length > 0 ?  popularMovies.map((movie) =><BigMovieCard movie={movie}> </BigMovieCard>) : <Loading></Loading>} 
           </div>

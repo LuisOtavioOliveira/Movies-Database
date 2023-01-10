@@ -10,15 +10,14 @@ const ModalMobile = () => {
         <Link to='/'> <BiHome></BiHome> </Link>
         </p>
         <h2> Filmes: </h2>
-        <Link to='/popular'> Populares </Link>
-        <Link> Em Cartaz </Link>
-        <Link> Próximas Estreias </Link>
-        <Link> Bem Avaliados </Link>
+        <Link to='/popularmovies'> Populares </Link>
+        <Link to='/onairmovies'> Em Cartaz </Link>
+        <Link to='/nextmovies'> Próximas Estreias </Link>
+        <Link to='/topratedmovies'> Bem Avaliados </Link>
         <h2> Séries: </h2>
-        <Link> Populares </Link>
-        <Link> Em exibição hoje </Link>
-        <Link> Na TV </Link>
-        <Link> Bem Avaliadas </Link>
+        <Link to='/popularseries'> Populares </Link>
+        <Link to='/ontvseries'> Na TV </Link>
+        <Link to='/topratedseries'> Bem Avaliadas </Link>
         <h2>Pessoas:</h2>
         <Link> Populares </Link>
 

@@ -6,7 +6,7 @@ import './BigMovieCard.css'
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const BigMovieCard = ({movie, favorite=false}) => {
+const BigSerieCard = ({movie, favorite=false}) => {
 
    const [class1, setClass1] = useState('')
    
@@ -24,7 +24,7 @@ const BigMovieCard = ({movie, favorite=false}) => {
       }
     },[]);
 
- const date = movie.release_date
+ const date = movie.first_air_date
  const year = date.substring(0, 4);
  const day = date.substring(date.length - 2)
  const nummonth = date.slice(5,7)
@@ -67,11 +67,11 @@ const BigMovieCard = ({movie, favorite=false}) => {
         </div>
         <div className='border'>
         <h3 className={class1}> <FaStar></FaStar> <span className='span2'> {movie.vote_average} </span> </h3>
-        <h2> <Link> {movie.title}</Link>  </h2>
+        <h2> <Link> {movie.name}</Link>  </h2>
         <p> {day} de {month} de {year} </p>
         </div>
     </div>
   )
 }
 
-export default BigMovieCard
+export default BigSerieCard
