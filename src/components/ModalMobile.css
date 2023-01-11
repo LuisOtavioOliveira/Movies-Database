@@ -12,7 +12,20 @@
     padding-bottom: 2rem;
     gap: 2rem;
     border-bottom-right-radius: 2rem;
+    animation: transitionmodal 0.5s;
 }
+
+@keyframes transitionmodal {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
 
 .modalmobile h2 {
     color: white;

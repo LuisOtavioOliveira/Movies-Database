@@ -4,13 +4,26 @@
     justify-content: center;
     padding: 2rem;
     gap: 2rem;
-    background-position: top topcd;
+    background-position: top top;
 }
+
 
 .containerbg img {
     width: 30rem;
     height: 45rem;
     border-radius: 1.5rem;
+    animation: imganimation 1.5s;
+}
+
+@keyframes imganimation {
+    0% {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
 }
 
 .moviedetails {
@@ -20,6 +33,7 @@
     color: white;
     justify-content: center;
     gap: 2rem;
+    animation: transitionmodal 1.5s;
 }
 
 .moviedetails h2 {

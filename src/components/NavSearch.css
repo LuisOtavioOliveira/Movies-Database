@@ -10,6 +10,18 @@
     height: 4.5rem;
     font-weight: bolder;
     gap: 2rem;
+    animation: searchtransition 0.5s;
+}
+
+@keyframes searchtransition {
+    0% {
+        height: 0%;
+        opacity: 0;
+    }
+    100% {
+        height: 4.5rem;
+        opacity: 1;
+    }
 }
 
 .navsearch h1 {
