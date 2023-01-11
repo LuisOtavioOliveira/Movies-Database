@@ -6,7 +6,7 @@ const MobileSerie = ({serie}) => {
 
 
     const stylesDiv = {
-        background: `linear-gradient(rgba(97, 97, 97, 0.8), rgba(0, 0, 0, 0.8)), url(https://image.tmdb.org/t/p/w500/${serie.backdrop_path})`,
+        background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://image.tmdb.org/t/p/w500/${serie.backdrop_path})`,
         backgroundPosition: 'center, center' ,
     }
 
