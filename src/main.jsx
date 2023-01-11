@@ -14,6 +14,7 @@ import OnTvSeries from './pages/OnTvSeries'
 import PopularSeries from './pages/PopularSeries'
 import OnAirSeries from './pages/OnAirSeries'
 import TopRatedSeries from './pages/TopRatedSeries'
+import Serie from './pages/Serie'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Route path='/onairseries' element={<OnAirSeries></OnAirSeries>}> </Route>
   <Route path='/popularseries' element={<PopularSeries></PopularSeries>}> </Route>
   <Route path='/topratedseries' element={<TopRatedSeries></TopRatedSeries>}> </Route>
+  <Route path='/serie/:id' element={<Serie></Serie>}> </Route>
   
 </Route>
     </Routes>

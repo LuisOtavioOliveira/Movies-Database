@@ -58,7 +58,7 @@ const SearchSerieCard = ({serie}) => {
 <img src={serie.poster_path !== null ? `https://image.tmdb.org/t/p/w500/${serie.poster_path}` : `https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg` } alt={serie.name} />
 <div className='otherinfos'>
 <div>
-<Link> {serie.name} </Link>
+<Link to={`/serie/${serie.id}`}> {serie.name} </Link>
     <h3> {date} </h3>
 </div>
     <p className='backspace'> {serie.overview} </p>

@@ -1,0 +1,101 @@
+.mobilediv {
+    display: flex;
+    min-width: 100%;
+    padding: 2rem;
+    align-items: center;
+    gap: 2rem;
+    
+    
+}
+
+.titleinfo {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobilediv h2 {
+    font-size: 3rem;
+    color: white;
+}
+
+.mobilediv h2 span {
+    font-weight: 400;
+
+}
+
+
+.containermobile {
+    width: 100%;
+    
+}
+
+.mobilediv img {
+    width: 14rem;
+    height: 20rem;
+    border-radius: 1rem;
+}
+
+.infosmobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(12, 52, 85);
+    color: white;
+    gap: 1rem;
+    padding-top: 2rem;
+}
+
+.infosmobile h2 {
+    font-size: 2.8rem;
+}
+
+.infosmobile h2 span {
+    font-weight: 400;
+    color: rgb(180, 180, 180);
+}
+
+.infosmobile h3 {
+    font-size: 2.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.infosmobile h4 {
+    font-size: 2.3rem;
+    color: rgb(172, 172, 172);
+    font-weight: 400;
+}
+
+.datainfo {
+    background-color: rgb(6, 29, 48);
+    width: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: .8rem;
+}
+
+.datainfo p {
+    font-size: 1.7rem;
+}
+
+.sinopseinfo h5 {
+    font-size: 2.3rem;
+}
+
+.sinopseinfo p {
+    font-size: 2.1rem;
+}
+
+.sinopseinfo {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+}

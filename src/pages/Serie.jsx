@@ -4,27 +4,28 @@ import './Movie.css'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import Background from './Background'
-import MobileMovie from './MobileMovie'
+import MobileSerie from './MobileSerie'
+import BackgroundSerie from './BackgroundSerie'
 
-const Movie = () => {
+const Serie = () => {
 
-  const [movie, setMovie] = useState([])
+  const [serie, setSerie] = useState([])
   
   
 const id = useParams()
 console.log(id.id)
 
-const getMovie = async (url) => {
+const getSerie = async (url) => {
   const res = await fetch(url);
   const data = await res.json();
-  setMovie(data)
+  setSerie(data)
 
 }
 
 
 useEffect(() => {
-  const urlMovie = `https://api.themoviedb.org/3/movie/${id.id}?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR`
-  getMovie(urlMovie)
+  const urlMovie = `https://api.themoviedb.org/3/tv/${id.id}?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR`
+  getSerie(urlMovie)
   
 
 },[]);
@@ -33,15 +34,16 @@ useEffect(() => {
 
   return (
 
-    <div className='Moviecontainer' >
+<div className='Moviecontainer' >
       <div className='pcversion'>
-      <Background movie={movie} />
+      <BackgroundSerie serie={serie} />
       </div>
       <div className='mobileversion'>
-        <MobileMovie movie={movie}/>
+        <MobileSerie serie={serie}/>
       </div>
     </div>
+
   )
 }
 
-export default Movie
+export default Serie

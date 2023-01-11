@@ -1,0 +1,18 @@
+.Moviecontainer {
+    min-height: 86vh;
+}
+
+.mobileversion {
+    display: none;
+}
+
+@media  screen and (max-width: 600px) {
+    .pcversion {
+        display: none;
+    }
+    .mobileversion {
+        display: flex;
+        background-color: rgb(12, 52, 85);
+        min-height: 86vh;
+    }
+}

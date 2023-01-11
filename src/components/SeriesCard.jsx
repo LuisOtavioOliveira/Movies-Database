@@ -65,7 +65,7 @@ const SeriesCard = ({movie, favorite = false}) => {
         <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}    alt={movie.name} />
         </div>
         <h3 className={class1}> <FaStar></FaStar> <span> {movie.vote_average} </span> </h3>
-        <h2> <Link> {movie.name}</Link>  </h2>
+        <h2> <Link to={`/serie/${movie.id}`}> {movie.name}</Link>  </h2>
         <p> {day} de {month} de {year} </p>
     </div>
   )

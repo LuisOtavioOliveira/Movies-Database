@@ -67,7 +67,7 @@ const BigMovieCard = ({movie, favorite=false}) => {
         </div>
         <div className='border'>
         <h3 className={class1}> <FaStar></FaStar> <span className='span2'> {movie.vote_average} </span> </h3>
-        <h2> <Link> {movie.title}</Link>  </h2>
+        <h2> <Link to={`/movie/${movie.id}`}> {movie.title}</Link>  </h2>
         <p> {day} de {month} de {year} </p>
         </div>
     </div>

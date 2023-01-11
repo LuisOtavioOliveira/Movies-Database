@@ -2,7 +2,7 @@
     min-height: 86vh;
     width: 100%;
     display: flex;
-    padding-top: 10rem;
+    padding-top: 4rem;
     padding-bottom: 10rem;
     justify-content: center;
     font-size: 1.5rem;
@@ -13,7 +13,7 @@
     .Movies {
         flex-direction: column;
         align-items: center;
-        padding: 2rem ;
+        padding: 0rem 2rem 2rem 2rem;
     }
     .moviegrid {
         display: flex;

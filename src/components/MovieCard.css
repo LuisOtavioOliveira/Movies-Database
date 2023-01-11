@@ -10,6 +10,7 @@
 .moviecard img {
     width: 15rem;
     height: 20rem;
+    border-radius: 1rem;
 }
 
 .moviecard h2 {
