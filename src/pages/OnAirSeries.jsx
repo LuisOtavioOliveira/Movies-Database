@@ -18,7 +18,17 @@ const OnAirSeries = () => {
     const [orderBy, setOrderBy] = useState('')
     const [onTvSeries, setOnTvSeries] = useState([])
     const [carriedMore, setCarriedMore] =  useState(false)
+    const [favorites, setFavorites] = useState([])
 
+    
+    function getFavorites() {
+      const items = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        items[key] = JSON.parse(localStorage.getItem(key));
+      }
+      return items;
+    }
     
 
     let genres = []
@@ -87,6 +97,8 @@ useEffect(() => {
   const urlPopularMovies = `https://api.themoviedb.org/3/tv/airing_today?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR&page=${page}`
   getOnTvSeries(urlPopularMovies)
   setPage(page + 1)
+  const favoriteMovies = getFavorites()
+  setFavorites(Object.values(favoriteMovies))
 
 },[]);
 
@@ -115,7 +127,7 @@ useEffect(() => {
         <div className='moviegrid'>
         <h2 className='titlemovies'> Em exibição hoje: </h2>
           <div  className='moviegrid'>
-          {onTvSeries.length > 0 ?  onTvSeries.map((movie) =><BigSerieCard movie={movie}> </BigSerieCard>) : <Loading></Loading>} 
+          {onTvSeries.length > 0 ?  onTvSeries.map((movie) =>favorites.find((fav) => fav.id === movie.id) ? <BigSerieCard favorite={true} movie={movie} ></BigSerieCard> :  <BigSerieCard movie={movie}> </BigSerieCard>) : <Loading></Loading>} 
           </div>
             
             

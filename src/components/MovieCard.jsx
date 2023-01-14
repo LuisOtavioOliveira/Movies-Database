@@ -8,12 +8,29 @@ import { useEffect } from 'react';
 const MovieCard = ({movie, favorite=false}) => {
 
    const [class1, setClass1] = useState('')
+   const [isFavorite, setIsFavorite] = useState(favorite);
+   const att = []
+
+
+   function storeItem(key, value) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+
+   function handleFavoriteClick() {
+     setIsFavorite(!isFavorite);
+     if (isFavorite) {
+       localStorage.removeItem(movie.id);
+     } else {
+       storeItem(movie.id, movie);
+     }
+     
+   }
    
-   console.log(movie.vote_average)
+
+
 
    useEffect(() => {
       const nota = movie.vote_average
-      console.log(nota)
       if (nota < 5) {
          setClass1('low')
       } else if (nota < 8) {
@@ -21,6 +38,7 @@ const MovieCard = ({movie, favorite=false}) => {
       } else  {
          setClass1('high')
       }
+      console.log('teste')
     },[]);
 
  const date = movie.release_date
@@ -52,7 +70,7 @@ const MovieCard = ({movie, favorite=false}) => {
  } else if (nummonth == '11') {
     month = 'Nov'
  } else if (nummonth == '12') {
-    month = 'Dez'
+    month = 'Dez'    
  } 
 
 
@@ -61,7 +79,7 @@ const MovieCard = ({movie, favorite=false}) => {
   return (
     <div className='moviecard'>
         <div className='divrelative'>
-        <button className={`buttonfav ${favorite && 'favorite'} `}> <FaStar></FaStar> </button>
+        <button onClick={handleFavoriteClick} className={`buttonfav ${isFavorite? 'favorite' : ''} `}> <FaStar></FaStar> </button>
         <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
         </div>
         <h3 className={class1}> <FaStar></FaStar> <span> {movie.vote_average} </span> </h3>

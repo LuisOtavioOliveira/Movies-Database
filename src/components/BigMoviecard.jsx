@@ -9,6 +9,20 @@ import { useEffect } from 'react';
 const BigMovieCard = ({movie, favorite=false}) => {
 
    const [class1, setClass1] = useState('')
+   const [isFavorite, setIsFavorite] = useState(favorite);
+
+   function storeItem(key, value) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+
+   function handleFavoriteClick() {
+     setIsFavorite(!isFavorite);
+     if (isFavorite) {
+       localStorage.removeItem(movie.id);
+     } else {
+       storeItem(movie.id, movie);
+     }
+   }
    
    console.log(movie.vote_average)
 
@@ -62,7 +76,7 @@ const BigMovieCard = ({movie, favorite=false}) => {
   return (
     <div className='big'>
         <div className='norelative'>
-        <button className={`buttonfav bigmargin ${favorite && 'favorite'} `}> <FaStar></FaStar> </button>
+        <button onClick={handleFavoriteClick} className={`buttonfav bigmargin ${isFavorite && 'favorite'} `}> <FaStar></FaStar> </button>
         <img src={movie.poster_path !== null ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : `https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg` } alt={movie.title} />
         </div>
         <div className='border'>

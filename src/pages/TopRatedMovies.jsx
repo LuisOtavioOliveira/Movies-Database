@@ -15,10 +15,19 @@ const TopRatedMovies = () => {
     const [orderBy, setOrderBy] = useState('')
     const [topRatedMovies, setTopRatedMovies] = useState([])
     const [carriedMore, setCarriedMore] =  useState(false)
+    const [favorites, setFavorites] = useState([])
 
     
+    function getFavorites() {
+      const items = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        items[key] = JSON.parse(localStorage.getItem(key));
+      }
+      return items;
+    }
+    
 
-    let genres = []
 
     const Filter = (generos) => {
     }
@@ -91,6 +100,9 @@ useEffect(() => {
   if (page < 86) {
     setPage(page + 1)
   }
+  const favoriteMovies = getFavorites()
+  setFavorites(Object.values(favoriteMovies))
+
 
 },[]);
 
@@ -119,7 +131,7 @@ useEffect(() => {
         <div className='moviegrid'>
         <h2 className='titlemovies'> Bem avaliados: </h2>
           <div  className='moviegrid'>
-          {topRatedMovies.length > 0 ?  topRatedMovies.map((movie) =><BigMovieCard movie={movie}> </BigMovieCard>) : <Loading></Loading>} 
+          {topRatedMovies.length > 0 ?  topRatedMovies.map((movie) =>favorites.find((fav) => fav.id === movie.id) ? <BigMovieCard favorite={true} movie={movie} ></BigMovieCard> :  <BigMovieCard movie={movie}> </BigMovieCard>) : <Loading></Loading>} 
           </div>
             
             

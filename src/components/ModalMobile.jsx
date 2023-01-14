@@ -20,6 +20,7 @@ const ModalMobile = () => {
         <Link to='/topratedseries'> Bem Avaliadas </Link>
         <h2>Pessoas:</h2>
         <Link> Populares </Link>
+        <h2> <Link to='/favorites'> Favoritos </Link> </h2>
 
 
     </div>

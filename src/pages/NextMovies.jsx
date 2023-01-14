@@ -15,7 +15,17 @@ const NextMovies = () => {
     const [orderBy, setOrderBy] = useState('')
     const [nextMovies, setNextMovies] = useState([])
     const [carriedMore, setCarriedMore] =  useState(false)
+    const [favorites, setFavorites] = useState([])
 
+    
+    function getFavorites() {
+      const items = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        items[key] = JSON.parse(localStorage.getItem(key));
+      }
+      return items;
+    }
     
 
     let genres = []
@@ -91,6 +101,8 @@ useEffect(() => {
   if (page < 86) {
     setPage(page + 1)
   }
+  const favoriteMovies = getFavorites()
+  setFavorites(Object.values(favoriteMovies))
 
 },[]);
 
@@ -120,7 +132,7 @@ useEffect(() => {
             <h2 className='titlemovies'> Estreia em breve: </h2>
           <div  className='moviegrid'>
             
-          {nextMovies.length > 0 ?  nextMovies.map((movie) =><BigMovieCard movie={movie}> </BigMovieCard>) : <Loading></Loading>} 
+          {nextMovies.length > 0 ?  nextMovies.map((movie) =>favorites.find((fav) => fav.id === movie.id) ? <BigMovieCard favorite={true} movie={movie} ></BigMovieCard> :  <BigMovieCard movie={movie}> </BigMovieCard>) : <Loading></Loading>} 
           </div>
             
             

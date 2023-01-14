@@ -8,6 +8,21 @@ import { useEffect } from 'react';
 const SeriesCard = ({movie, favorite = false}) => {
 
    const [class1, setClass1] = useState('')
+   const [isFavorite, setIsFavorite] = useState(favorite);
+   
+   function storeItem(key, value) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+
+   function handleFavoriteClick() {
+     setIsFavorite(!isFavorite);
+     if (isFavorite) {
+       localStorage.removeItem(movie.id);
+     } else {
+       storeItem(movie.id, movie);
+     }
+     
+   }
    
 
    useEffect(() => {
@@ -61,7 +76,7 @@ const SeriesCard = ({movie, favorite = false}) => {
   return (
     <div className='moviecard'>
         <div className='divrelative'>
-        <button className={`buttonfav ${favorite && 'favorite'} `}> <FaStar></FaStar> </button>
+        <button onClick={handleFavoriteClick} className={`buttonfav ${isFavorite && 'favorite'} `}> <FaStar></FaStar> </button>
         <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}    alt={movie.name} />
         </div>
         <h3 className={class1}> <FaStar></FaStar> <span> {movie.vote_average} </span> </h3>

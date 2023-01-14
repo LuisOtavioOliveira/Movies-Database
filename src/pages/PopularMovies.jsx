@@ -17,10 +17,18 @@ const PopularMovies = () => {
     const [orderBy, setOrderBy] = useState('')
     const [popularMovies, setPopularMovies] = useState([])
     const [carriedMore, setCarriedMore] =  useState(false)
+    const [favorites, setFavorites] = useState([])
 
+    function getFavorites() {
+      const items = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        items[key] = JSON.parse(localStorage.getItem(key));
+      }
+      return items;
+    }
     
 
-    let genres = []
 
     const Filter = (generos) => {
     }
@@ -87,6 +95,8 @@ useEffect(() => {
   const urlPopularMovies = `https://api.themoviedb.org/3/movie/popular?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR&page=${page}`
   getPopularMovies(urlPopularMovies)
   setPage(page + 1)
+  const favoriteMovies = getFavorites()
+  setFavorites(Object.values(favoriteMovies))
 
 },[]);
 
@@ -115,8 +125,9 @@ useEffect(() => {
         <div className='moviegrid'>
         <h2 className='titlemovies'> Filmes populares: </h2>
           <div  className='moviegrid'>
-          {popularMovies.length > 0 ?  popularMovies.map((movie) =><BigMovieCard movie={movie}> </BigMovieCard>) : <Loading></Loading>} 
+          {popularMovies.length > 0 ?  popularMovies.map((movie) => favorites.find((fav) => fav.id === movie.id) ? <BigMovieCard favorite={true} movie={movie} ></BigMovieCard> :  <BigMovieCard movie={movie}> </BigMovieCard>) : <Loading></Loading>} 
           </div>
+          
             
             
           <button onClick={() => NextPage()} className='loadmore'> Carregar mais... </button>

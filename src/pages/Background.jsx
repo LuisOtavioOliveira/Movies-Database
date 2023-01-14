@@ -3,7 +3,7 @@ import './Background.css'
 import {FaStar} from 'react-icons/fa'
 import {VscDebugBreakpointData} from 'react-icons/vsc'
 
-const Background = ({movie}) => {
+const Background = ({movie, cast}) => {
 
     const stylesDiv = {
         background: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${movie.backdrop_path}')`,
@@ -15,6 +15,8 @@ const Background = ({movie}) => {
     const duration = `${hours}h  ${remainingMinutes}min.`
 
 
+    
+
 
     
 
@@ -24,7 +26,8 @@ const Background = ({movie}) => {
 
 
   return (
-    <div className='containerbg' style={stylesDiv}>    
+    <div>
+      <div className='containerbg' style={stylesDiv}>    
         <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
         <div className='moviedetails'>
             <div>
@@ -39,6 +42,10 @@ const Background = ({movie}) => {
             </div>
         </div>
 
+    </div>
+    <div>
+      <h2> {cast.map((actor) => actor.name)} </h2>
+    </div>
     </div>
   )
 }

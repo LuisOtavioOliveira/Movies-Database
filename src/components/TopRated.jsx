@@ -8,10 +8,22 @@ import Loading from './Loading';
 const TopRated = () => {
 
 
-    const favorites = ['Wandinha', 'Glass Onion: Um Mistério Knives Out', 'Yellowstone']
     const [topMovies, setTopMovies] = useState([]);
     const [topSeries, setTopSeries] = useState([])
     const [type, setType] = useState('movies')
+    const [favorites, setFavorites] = useState([])
+
+    
+    
+
+    function getFavorites() {
+      const items = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        items[key] = JSON.parse(localStorage.getItem(key));
+      }
+      return items;
+    }
 
 
   
@@ -20,26 +32,29 @@ const TopRated = () => {
       const res = await fetch(url);
       const data = await res.json();
       setTopMovies(data.results);
-      console.log(topMovies)
+
     };
 
     const getTopRatedSeries = async (url) => {
         const res = await fetch(url);
         const data = await res.json();
         setTopSeries(data.results);
-        console.log(topMovies)
+
       };
   
     useEffect(() => {
       const topRatedUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR&page=1'
       const topSeriesUrl = 'https://api.themoviedb.org/3/tv/popular?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR&page=1'  
-      console.log(topRatedUrl);
+      const favoriteMovies = getFavorites()
+      setFavorites(Object.values(favoriteMovies))
+      console.log(favorites);
       getTopRatedSeries(topSeriesUrl)
       getTopRatedMovies(topRatedUrl);
+      
+
     },[]);
 
-    const firstfive = topMovies.slice(0,7);
-    const firstseries = topSeries.slice(0,7);
+    
 
   return (
     <div className='toprated'>
@@ -51,9 +66,9 @@ const TopRated = () => {
             </div>
         </div>
         <div className='moviesexib'>
-            {topMovies.length == 0 ? <Loading></Loading> : type == 'movies' && topMovies.map((movie) => favorites.indexOf(movie.title) == -1 ? <MovieCard movie={movie}></MovieCard> : <MovieCard favorite={true} movie={movie} ></MovieCard>) }
+            {topMovies.length == 0 ? <Loading></Loading> : type == 'movies' && topMovies.map((movie) =>  favorites.find((fav) => fav.id === movie.id) ? <MovieCard favorite={true} movie={movie} ></MovieCard> :  <MovieCard movie={movie}> </MovieCard> ) }
             {type == 'series' && 
-            topSeries.map((movie) => favorites.indexOf(movie.name) == -1 ? <SeriesCard movie={movie}></SeriesCard> : <SeriesCard favorite={true} movie={movie} ></SeriesCard>)
+            topSeries.map((movie) => favorites.find((fav) => fav.id === movie.id) ? <SeriesCard favorite={true} movie={movie} ></SeriesCard> :  <SeriesCard movie={movie}> </SeriesCard>)
             }
             
         </div>

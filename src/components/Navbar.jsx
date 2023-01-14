@@ -45,7 +45,7 @@ const Navbar = () => {
             </li>
         </ul>
         <ul className='navbarul2'>
-            <li className='fontweightnav'> <Link className='white'>Favoritos </Link> </li>
+            <li className='fontweightnav'> <Link to='/favorites' className='white'>Favoritos </Link> </li>
             <li> 
                 {open ? <button onClick={() => setOpen(false)} className='buttonsearch'> <AiOutlineClose></AiOutlineClose>  </button> : <button onClick={() => setOpen(true)} className='buttonsearch'> <BsSearch className='searchbutton'></BsSearch> </button>}
                 

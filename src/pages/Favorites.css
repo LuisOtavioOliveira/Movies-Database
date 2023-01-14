@@ -1,0 +1,36 @@
+.favoritescontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 86vh;
+}
+
+.favoritesbuttons {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.favoritesbuttons button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.favoritesbuttons button.selectedbutton {
+    border-bottom: 2px solid rgb(12, 52, 85);
+}
+
+.favoritesexib {
+    justify-content: center;
+    display: flex;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-wrap: wrap;
+}

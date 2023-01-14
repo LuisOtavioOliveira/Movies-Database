@@ -17,10 +17,13 @@ const OnAirMovies = () => {
     const [orderBy, setOrderBy] = useState('')
     const [onAirMovies, setOnAirMovies] = useState([])
     const [carriedMore, setCarriedMore] =  useState(false)
+    const [favorites, setFavorites] = useState([])
 
     
 
-    let genres = []
+    
+    
+
 
     const Filter = (generos) => {
     }
@@ -87,12 +90,24 @@ const NextPage = () => {
   
 }
 
+function getFavorites() {
+  const items = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    items[key] = JSON.parse(localStorage.getItem(key));
+  }
+  return items;
+}
+
+
 useEffect(() => {
   const urlPopularMovies = `https://api.themoviedb.org/3/movie/now_playing?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR&page=${page}`
   GetOnAirMovies(urlPopularMovies)
   if (page < 86) {
     setPage(page + 1)
   }
+  const favoriteMovies = getFavorites()
+  setFavorites(Object.values(favoriteMovies))
 
 },[]);
 
@@ -121,7 +136,7 @@ useEffect(() => {
         <div className='moviegrid'>
         <h2 className='titlemovies'> Em cartaz: </h2>
           <div  className='moviegrid'>
-          {onAirMovies.length > 0 ?  onAirMovies.map((movie) =><BigMovieCard movie={movie}> </BigMovieCard>) : <Loading></Loading>} 
+          {onAirMovies.length > 0 ?  onAirMovies.map((movie) =>favorites.find((fav) => fav.id === movie.id) ? <BigMovieCard favorite={true} movie={movie} ></BigMovieCard> :  <BigMovieCard movie={movie}> </BigMovieCard>) : <Loading></Loading>} 
           </div>
             
             

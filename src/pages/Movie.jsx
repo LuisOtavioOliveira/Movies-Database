@@ -9,6 +9,7 @@ import MobileMovie from './MobileMovie'
 const Movie = () => {
 
   const [movie, setMovie] = useState([])
+  const [cast, setCast] = useState([])
   
   
 const id = useParams()
@@ -21,9 +22,16 @@ const getMovie = async (url) => {
 
 }
 
+const getCast = async (url) => {
+  const res = await fetch(url);
+  const data = await res.json();
+  setCast(data.cast)
+}
+
 
 useEffect(() => {
   const urlMovie = `https://api.themoviedb.org/3/movie/${id.id}?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR`
+  const urlActors = `https://api.themoviedb.org/3/movie/${id.id}/credits?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR`
   window.scrollTo(0, 0);
   getMovie(urlMovie)
   
@@ -36,7 +44,7 @@ useEffect(() => {
 
     <div className='Moviecontainer' >
       <div className='pcversion'>
-      <Background movie={movie} />
+      <Background cast={cast} movie={movie} />
       </div>
       <div className='mobileversion'>
         <MobileMovie movie={movie}/>
