@@ -50,7 +50,7 @@ if (button == 'movies') {
       useEffect(() => {
         const favoriteMovies = getFavorites()
         setFavoriteMovies(Object.values(favoriteMovies).filter((movie) => movie.title !== undefined))
-        setFavoriteSeries(Object.values(favoriteMovies).filter((movie) => movie.title == undefined))
+        setFavoriteSeries(Object.values(favoriteMovies).filter((movie) => movie.name !== undefined))
       },[type]);
 
   return (

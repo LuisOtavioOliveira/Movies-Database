@@ -73,3 +73,53 @@
 .moviedetails h5 {
     font-size: 2rem;
 }
+
+.castinfos {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 1rem;
+   
+}
+
+.castinfos h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.persons {
+    display: flex;
+    gap: 2rem;
+    overflow-x: scroll;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.favoritebutton {
+    display: flex;
+    padding: 1rem;
+    border: none;
+    background-color: rgb(216, 216, 36);
+    color: white;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.favoritebutton:hover {
+    background-color: rgb(145, 145, 31);
+}
+
+.aga3 {
+    display: flex;
+    font-size: 3rem;
+    align-items: center;
+    font-weight: 700;
+    gap: 1rem;
+}
+
+.favoritebutton.selectedfavorite {
+    background-color: red;
+    transition: 1s;
+}
