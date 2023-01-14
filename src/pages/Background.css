@@ -123,3 +123,7 @@
     background-color: red;
     transition: 1s;
 }
+
+.favoritebutton.selectedfavorite:hover {
+    background-color: rgb(136, 18, 18);
+}
