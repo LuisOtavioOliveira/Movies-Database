@@ -7,12 +7,12 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+
       <Navbar></Navbar>
-      <div className='outlet'>
+  
         <Outlet></Outlet>
-      </div>
-      </div>
+
+
       <Footer></Footer>
     </div>
   )
