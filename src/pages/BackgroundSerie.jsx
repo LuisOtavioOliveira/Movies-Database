@@ -67,6 +67,7 @@ const BackgroundSerie = ({movie, cast, favorite}) => {
             <p>  {movie.first_air_date !== undefined ? movie.first_air_date.substring(movie.first_air_date.length - 2) : movie.first_air_date }/{movie.first_air_date !== undefined ? movie.first_air_date.slice(5,7) : movie.first_air_date }/{movie.first_air_date !== undefined ? movie.first_air_date.substring(0,4) : movie.first_air_date } <VscDebugBreakpointData/> {movie.genres !== undefined && `${movie.genres.map((genre) => genre.name )}`}   </p>
             </div>
             <div className='aga3'> <h3> <FaStar></FaStar> {movie.vote_average} </h3> <VscDebugBreakpointData></VscDebugBreakpointData>  <button onClick={handleFavoriteClick} className={`favoritebutton ${isFavorite && 'selectedfavorite'}`}> {textButton} </button>  </div>
+            <h4> <i> {movie.tagline} </i></h4>
             <div>
             <h5> Sinopse </h5>
             <p> {movie.overview} </p>

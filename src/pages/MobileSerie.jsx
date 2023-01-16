@@ -70,6 +70,7 @@ const MobileSerie = ({movie , cast, favorite}) => {
  </div>
 
  <div className='sinopseinfo'>
+ <h4> <i> {movie.tagline}</i>  </h4>
     <h5> Sinopse </h5>
     <p> {movie.overview} </p>
  </div>
