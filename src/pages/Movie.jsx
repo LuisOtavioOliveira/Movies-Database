@@ -44,7 +44,6 @@ const getCast = async (url) => {
 useEffect(() => {
   const urlMovie = `https://api.themoviedb.org/3/movie/${id.id}?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR`
   const urlActors = `https://api.themoviedb.org/3/movie/${id.id}/credits?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR`
-  window.scrollTo(0, 0);
   getMovie(urlMovie)
   getCast(urlActors)
   const favoriteMovies = getFavorites()

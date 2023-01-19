@@ -47,6 +47,7 @@ const MobileSerie = ({movie , cast, favorite}) => {
    useEffect(() => {
     setIsFavorite(favorite)
   SetButton(favorite)
+  window.scrollTo(0, 0);
     
   },[favorite]);
 
