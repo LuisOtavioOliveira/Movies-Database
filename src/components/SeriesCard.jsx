@@ -77,7 +77,7 @@ const SeriesCard = ({movie, favorite = false}) => {
     <div className='moviecard'>
         <div className='divrelative'>
         <button onClick={handleFavoriteClick} className={`buttonfav ${isFavorite && 'favorite'} `}> <FaStar></FaStar> </button>
-        <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}    alt={movie.name} />
+        <Link to={`/serie/${movie.id}`}> <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}    alt={movie.name} /> </Link>
         </div>
         <h3 className={class1}> <FaStar></FaStar> <span> {movie.vote_average} </span> </h3>
         <h2> <Link to={`/serie/${movie.id}`}> {movie.name}</Link>  </h2>
