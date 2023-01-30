@@ -23,19 +23,10 @@
 }
 
 .favoritesbuttons button.selectedbutton {
-    
-    animation: bordertransition 1s linear;
+    border-bottom: 2px solid rgb(12, 52, 85);
 }
 
 
-@keyframes bordertransition {
-    0% {
-        border-bottom: 0px solid rgb(12, 52, 85);
-    }
-    100% {
-        border-bottom: 2px solid rgb(12, 52, 85);
-    }
-}
 
 .favoritesexib {
     justify-content: center;
