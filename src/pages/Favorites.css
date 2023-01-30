@@ -30,7 +30,7 @@
 
 @keyframes bordertransition {
     0% {
-        border-width: 0%;
+        border-width: 0px;
     }
     100% {
         border-width: 100%;
