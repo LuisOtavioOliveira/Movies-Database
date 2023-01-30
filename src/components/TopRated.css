@@ -39,6 +39,7 @@
 .buttonsdiv p.active {
     background-color: rgb(12, 52, 85);
     color: white;
+    transition: 1s;
   }
 
   .moviesexib {
