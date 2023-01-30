@@ -24,7 +24,7 @@
 
 .favoritesbuttons button.selectedbutton {
     border-bottom: 2px solid rgb(12, 52, 85);
-    transition: 1s;
+    animation: transitionmodal 0.5s;
 }
 
 .favoritesexib {
