@@ -23,17 +23,17 @@
 }
 
 .favoritesbuttons button.selectedbutton {
-    border-bottom: 2px solid rgb(12, 52, 85);
+    
     animation: bordertransition 1s linear;
 }
 
 
 @keyframes bordertransition {
     0% {
-        border-width: 0px;
+        border-bottom: 0px solid rgb(12, 52, 85);
     }
     100% {
-        border-width: 100%;
+        border-bottom: 2px solid rgb(12, 52, 85);
     }
 }
 
