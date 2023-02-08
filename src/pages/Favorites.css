@@ -11,19 +11,59 @@
     justify-content: center;
 }
 
-.favoritesbuttons button {
-    display: flex;
-    justify-content: center;
+.favbuttonsdiv {
     width: 100%;
-    border: none;
-    cursor: pointer;
-    padding: 1rem;
-    font-size: 1.4rem;
-    font-weight: 700;
+    display: flex;
+    flex-direction: column;
 }
 
-.favoritesbuttons button.selectedbutton {
-    border-bottom: 2px solid rgb(12, 52, 85);
+.favbuttonsdiv button {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 1.2rem;
+    cursor: pointer;
+}
+
+.animationdiv1 { 
+    background-color: #0C3455;
+    height: 0.22rem;
+    margin-top: -0.25rem;
+    animation: favoritesanimation1 .5s linear;
+    position: relative;
+
+}
+
+.animationdiv2 {
+    background-color: #0C3455;
+    height: 0.22rem;
+    margin-top: -0.25rem;
+    animation: favoritesanimation .5s linear;
+
+}
+
+.invisible {
+    display: none;
+}
+
+@keyframes favoritesanimation {
+    0% {
+        transform: translateX(-100%); 
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes favoritesanimation1 {
+    0% {
+        transform: translateX(100%); 
+    }
+    100% {
+        transform: translateX(0%);
+    }
 }
 
 

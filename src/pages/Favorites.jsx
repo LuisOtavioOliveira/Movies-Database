@@ -55,9 +55,15 @@ if (button == 'movies') {
 
   return (
 <div className='favoritescontainer'>
-    <div className='favoritesbuttons'>
+<div className='favoritesbuttons'>
+        <div className='favbuttonsdiv'>
         <button id='movies' className='selectedbutton' onClick={() => changeType('movies')}> Filmes </button>
+        <div className={`animationdiv1 ${type == 'series' && `invisible`}`}> </div>
+        </div>
+        <div className='favbuttonsdiv'>
         <button id='series' onClick={() => changeType('series')}> Séries </button>
+        <div className={`animationdiv2 ${type == 'movies' && `invisible`}`}> </div>
+        </div>
     </div>
 <div className='favoritesexib'>
         {type == 'movies' ? favoriteMovies.length > 0 ? favoriteMovies.map((movie) => <BigMovieCard movie={movie} favorite={true} />) : <h2> Você não adicionou nenhum filme aos favoritos. </h2>  : <></>}
