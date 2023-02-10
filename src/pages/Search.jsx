@@ -10,7 +10,7 @@ import SearchPersonCard from '../components/SearchPersonCard'
 const Search = () => {
 
 const query = useParams()
-
+console.log(query)
 const [series, setSeries] = useState([])
 const [movies, setMovies] = useState([])
 const [people, setPeople] = useState([])
@@ -21,30 +21,63 @@ const getMovie = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
     setMovies(data.results);
-
+    console.log(movies)
+    return data.results
 }
 
 const getSerie = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
     setSeries(data.results);
-
+    console.log(series)
+    return data.results
 }
 
 const getPerson = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
     setPeople(data.results);
-
+    console.log(people)
+    return data.results
 }
 
-useEffect(() => {
+const verifyType = (filmes, tvs, pessoas) => {
+
+if (filmes.length == tvs.length && filmes.length == pessoas.length) {
+    setType('movies')
+
+} else if (filmes.length > tvs.length && filmes.length > pessoas.length) {
+    setType('movies')
+
+} else if (pessoas.length > filmes.length && pessoas.length > tvs.length) {
+    setType('people')
+
+} else if (tvs.length > filmes.length && tvs.length > pessoas.length) {
+    setType('series')
+
+} else if (tvs.length > filmes.length && tvs.length == pessoas.length) {
+    setType('series')
+
+}
+     
+} 
+
+const initialFunction = async () => {
     const searchMovieUrl = `https://api.themoviedb.org/3/search/movie?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR&query=${query.query}&page=1&include_adult=false`
     const searchSerieUrl = `https://api.themoviedb.org/3/search/tv?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR&page=1&query=${query.query}&include_adult=false`  
     const searchPersonUrl = `https://api.themoviedb.org/3/search/person?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR&query=${query.query}&page=1&include_adult=false`
-    getMovie(searchMovieUrl)
-    getSerie(searchSerieUrl);
-    getPerson(searchPersonUrl)
+   const serie = await getMovie(searchMovieUrl)
+   const movie = await getSerie(searchSerieUrl);
+   const pessoas = await getPerson(searchPersonUrl)
+   console.log(movie)
+   console.log(movie)
+   console.log(pessoas)
+    verifyType(serie,movie,pessoas)
+}
+
+useEffect(() => {
+    initialFunction()
+    
   },[query]);
 
 
@@ -53,9 +86,9 @@ useEffect(() => {
     <div className='type'>
         <h3> Resultado da Busca </h3>
         <div>
-        <button onClick={() => setType('movies')}> Filmes <span> {movies.length} </span></button>
-        <button onClick={() => setType('series')} > Séries <span> {series.length} </span> </button>
-        <button onClick={() => setType('people')} > Pessoas <span> {people.length} </span> </button>
+        <button className={type == 'movies' ? 'selectedbutton' : ''} onClick={() => setType('movies')}> Filmes <span> {movies.length} </span></button>
+        <button className={type == 'series' ? 'selectedbutton' : ''} onClick={() => setType('series')} > Séries <span> {series.length} </span> </button>
+        <button className={type == 'people' ? 'selectedbutton' : ''} onClick={() => setType('people')} > Pessoas <span> {people.length} </span> </button>
         </div>
     </div>
 

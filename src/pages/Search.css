@@ -49,6 +49,10 @@
     cursor: pointer;
 }
 
+.type div button.selectedbutton {
+    background-color: lightgray;
+}
+
 .type div button:hover {
     background-color: lightgray;
 }
