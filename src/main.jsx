@@ -26,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Route path='/popularmovies' element={<PopularMovies></PopularMovies>}> </Route>
   <Route path='/movie/:id' element={<Movie/>}> </Route>
   <Route path='/search/:query' element={<Search></Search>}> </Route>
+  <Route path ='/search' element={<Search></Search>}> </Route>
   <Route path='/onairmovies' element={<OnAirMovies></OnAirMovies>}> </Route>
   <Route path='/nextmovies' element={<NextMovies></NextMovies>}> </Route>
   <Route path='/topratedmovies' element={<TopRatedMovies></TopRatedMovies>}> </Route>
