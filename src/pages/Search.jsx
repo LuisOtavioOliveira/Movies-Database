@@ -10,7 +10,7 @@ import SearchPersonCard from '../components/SearchPersonCard'
 const Search = () => {
 
 const query = useParams()
-console.log(query)
+
 const [series, setSeries] = useState([])
 const [movies, setMovies] = useState([])
 const [people, setPeople] = useState([])
@@ -21,7 +21,7 @@ const getMovie = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
     setMovies(data.results);
-    console.log(movies)
+
     return data.results
 }
 
@@ -29,7 +29,7 @@ const getSerie = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
     setSeries(data.results);
-    console.log(series)
+
     return data.results
 }
 
@@ -37,12 +37,12 @@ const getPerson = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
     setPeople(data.results);
-    console.log(people)
+
     return data.results
 }
 
 const verifyType = (filmes, tvs, pessoas) => {
-    console.log(filmes)
+
 
 const popularity = filmes.map((filme => filme.popularity))
 const maxpopm = Math.max(...popularity)
@@ -69,9 +69,7 @@ const initialFunction = async () => {
    const serie = await getMovie(searchMovieUrl)
    const movie = await getSerie(searchSerieUrl);
    const pessoas = await getPerson(searchPersonUrl)
-   console.log(movie)
-   console.log(movie)
-   console.log(pessoas)
+
     verifyType(serie,movie,pessoas)
 }
 
