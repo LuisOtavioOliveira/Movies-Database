@@ -42,24 +42,24 @@ const getPerson = async (url) => {
 }
 
 const verifyType = (filmes, tvs, pessoas) => {
+    console.log(filmes)
 
-if (filmes.length == tvs.length && filmes.length == pessoas.length) {
-    setType('movies')
+const popularity = filmes.map((filme => filme.popularity))
+const maxpopm = Math.max(...popularity)
 
-} else if (filmes.length > tvs.length && filmes.length > pessoas.length) {
-    setType('movies')
+const popseries = tvs.map((tv => tv.popularity))
+const maxpoptv = Math.max(...popseries)
 
-} else if (pessoas.length > filmes.length && pessoas.length > tvs.length) {
+if (filmes.length == 0 && tvs.length == 0 && pessoas.length > 0) {
     setType('people')
-
-} else if (tvs.length > filmes.length && tvs.length > pessoas.length) {
+} else if (filmes.length == 0 && tvs.length > 0) {
     setType('series')
-
-} else if (tvs.length > filmes.length && tvs.length == pessoas.length) {
+} else if (maxpoptv > maxpopm) {
     setType('series')
-
+} else {
+    setType('movies')
 }
-     
+
 } 
 
 const initialFunction = async () => {
