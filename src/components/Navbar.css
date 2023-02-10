@@ -38,6 +38,16 @@
     font-weight: 700;
 }
 
+.divmodal {
+    width: 100%;
+    transition: 1s;
+}
+
+.modalnone {
+    transition: 1s;
+    display:    none;
+}
+
 .mobilenav {
     display: none;
 }
@@ -57,3 +67,5 @@
         justify-content: space-around;
     }
 }
+
+

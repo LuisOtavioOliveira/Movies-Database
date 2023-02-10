@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import './ModalMobile.css'
 import {BiHome} from 'react-icons/bi'
 
-const ModalMobile = () => {
+const ModalMobile = ({display }) => {
+
   return (
-    <div className='modalmobile'>
+    <div className={`modalmobile ${!display ? 'modalinvisible' : ''}`}>
         <p>
         <Link to='/'> <BiHome></BiHome> </Link>
         </p>
