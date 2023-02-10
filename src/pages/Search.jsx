@@ -10,7 +10,7 @@ import SearchPersonCard from '../components/SearchPersonCard'
 const Search = () => {
 
 const query = useParams()
-console.log(query)
+
 const [series, setSeries] = useState([])
 const [movies, setMovies] = useState([])
 const [people, setPeople] = useState([])
@@ -21,21 +21,21 @@ const getMovie = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
     setMovies(data.results);
-    console.log(movies)
+
 }
 
 const getSerie = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
     setSeries(data.results);
-    console.log(series)
+
 }
 
 const getPerson = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
     setPeople(data.results);
-    console.log(people)
+
 }
 
 useEffect(() => {

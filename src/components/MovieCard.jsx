@@ -38,7 +38,6 @@ const MovieCard = ({movie, favorite=false}) => {
       } else  {
          setClass1('high')
       }
-      console.log('teste')
     },[]);
 
  const date = movie.release_date

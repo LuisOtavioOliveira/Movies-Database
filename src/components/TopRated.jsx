@@ -47,7 +47,7 @@ const TopRated = () => {
       const topSeriesUrl = 'https://api.themoviedb.org/3/tv/popular?api_key=4888028033e53f9aa150a7b1fd5bf7ca&language=pt-BR&page=1'  
       const favoriteMovies = getFavorites()
       setFavorites(Object.values(favoriteMovies))
-      console.log(favorites);
+
       getTopRatedSeries(topSeriesUrl)
       getTopRatedMovies(topRatedUrl);
       

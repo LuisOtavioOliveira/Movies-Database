@@ -23,7 +23,7 @@ const Movie = () => {
   }
 
 const id = useParams()
-console.log(id.id)
+
 
 const getMovie = async (url) => {
   const res = await fetch(url);

@@ -39,11 +39,11 @@ const BackgroundSerie = ({movie, cast, favorite}) => {
 
       if (fav == true) {
         setTextButton('Remover dos Favoritos')
-        console.log('Remove')
+
       } else {
         setTextButton('Adicionar aos favoritos')
-        console.log('add')
-        console.log(fav)
+
+
       }
   
   

@@ -5,7 +5,7 @@ import './SearchPersonCard.css'
 const SearchPersonCard = ({person}) => {
 
     const knownfor = `${person.known_for.map((thing) => `${thing.title == undefined ?  thing.name  :  thing.title  }`)}`
-    console.log(knownfor)
+
 
 
   return (

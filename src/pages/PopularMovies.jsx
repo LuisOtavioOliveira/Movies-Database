@@ -73,7 +73,7 @@ const getNextPage = async (url) => {
   const res = await fetch(url);
   const data = await res.json();
   setPopularMovies([...popularMovies, data.results].flat());
-  console.log(popularMovies)
+
 };
 
 const getPopularMovies = async (url) => {

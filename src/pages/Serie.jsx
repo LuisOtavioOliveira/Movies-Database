@@ -25,7 +25,7 @@ const Serie = () => {
 
   
 const id = useParams()
-console.log(id.id)
+
 
 const getSerie = async (url) => {
   const res = await fetch(url);

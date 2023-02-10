@@ -25,11 +25,11 @@ const BigSerieCard = ({movie, favorite=false}) => {
    }
 
    
-   console.log(movie.vote_average)
+
 
    useEffect(() => {
       const nota = movie.vote_average
-      console.log(nota)
+
       if (nota < 5) {
          setClass1('low')
       } else if (nota < 8) {
