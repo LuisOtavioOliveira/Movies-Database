@@ -6,12 +6,15 @@ import { useNavigate } from 'react-router-dom';
 
 const FixedSearch = () => {
 
-  const [query, setQuery] = useState('0')
+  const [query, setQuery] = useState('')
     const navigate = useNavigate()
 
     const SendForm = (e) => {
         e.preventDefault()
-        navigate(`/search/${query}`)
+        if (query !== '') {
+          navigate(`/search/${query}`)
+        } else return
+       
     } 
 
     const handleChange = event => {

@@ -92,14 +92,14 @@ useEffect(() => {
         </div>
     </div>
 
-    <div className='exib'>
+    {query == '' ? <h2> Você não pode deixar o campo de pesquisa em branco. </h2> : <div className='exib'>
     {type == 'movies' && movies.length == 0 && <h2> Não encontramos resultados para essa categoria.</h2>}
 {type == 'movies' && movies.length > 0 && movies.map((movie) => <SearchMovieCard movie={movie} ></SearchMovieCard>)}
 {type == 'series' && series.length == 0 && <h2> Não encontramos resultados para essa categoria.</h2>}
 {type == 'series' && series.length > 0 && series.map((serie) => <SearchSerieCard serie={serie}/>)}
 {type == 'people' && people.length > 0 && people.map((person) => <SearchPersonCard person={person}/>)}
 {type == 'people' && people.length == 0 && <h2> Não encontramos resultados para essa categoria.</h2>}
-    </div>
+    </div>}
 
 
 
