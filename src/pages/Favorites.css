@@ -27,22 +27,22 @@
     cursor: pointer;
 }
 
-.animationdiv1 { 
-    background-color: #0C3455;
-    height: 0.22rem;
-    margin-top: -0.25rem;
-    animation: favoritesanimation1 .2s linear;
-    position: relative;
-
-}
 
 .animationdiv2 {
     background-color: #0C3455;
     height: 0.22rem;
-    margin-top: -0.25rem;
-    animation: favoritesanimation .2s linear;
+    width: 50%;
+    transform: translateX(0%);
+    transition: .2s;
+    margin-top: -.22rem;
 
 }
+
+.animationdiv2.typeseries {
+    transform: translateX(100%);
+    transition: .2s;
+}
+
 
 .invisible {
     display: none;
