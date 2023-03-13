@@ -38,6 +38,7 @@ const BigMovieCard = ({movie, favorite=false}) => {
       }
     },[]);
 
+
  const date = movie.release_date
  const year = date.substring(0, 4);
  const day = date.substring(date.length - 2)
@@ -69,9 +70,6 @@ const BigMovieCard = ({movie, favorite=false}) => {
  } else if (nummonth == '12') {
     month = 'Dez'
  } 
-
-
-
 
   return (
     <div className='big'>
