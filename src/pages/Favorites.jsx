@@ -57,8 +57,8 @@ if (button == 'movies') {
 <div className='favoritescontainer'>
     <div className='favoritesbuttons'>
         <div className='favbuttonsdiv'>
-        <button id='movies' className='selectedbutton' onClick={() => changeType('movies')}> Filmes </button>
-        <button id='series' onClick={() => changeType('series')}> Séries </button>
+        <button aria-label="Ver filmes" id='movies' className='selectedbutton' onClick={() => changeType('movies')}> Filmes </button>
+        <button aria-label="Ver séries" id='series' onClick={() => changeType('series')}> Séries </button>
         
         </div>
         <div className={`animationdiv2 ${type == 'series' ? 'typeseries' : ''}`}> </div>

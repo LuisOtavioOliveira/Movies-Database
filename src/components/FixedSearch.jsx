@@ -29,7 +29,7 @@ const FixedSearch = () => {
         </div>
         <form onSubmit={SendForm}>
             <input onChange={handleChange} placeholder='Buscar por um filme, série ou pessoa...' type="text" />
-            <button type='submit'> Search </button>
+            <button aria-label="Pesquisar" type='submit'> Search </button>
         </form>
 
     </div>

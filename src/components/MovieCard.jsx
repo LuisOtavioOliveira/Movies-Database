@@ -78,7 +78,7 @@ const MovieCard = ({movie, favorite=false}) => {
   return (
     <div className='moviecard'>
         <div className='divrelative'>
-        <button onClick={handleFavoriteClick} className={`buttonfav ${isFavorite? 'favorite' : ''} `}> <FaStar></FaStar> </button>
+        <button aria-label="Favoritar." onClick={handleFavoriteClick} className={`buttonfav ${isFavorite? 'favorite' : ''} `}> <FaStar></FaStar> </button>
         <Link to={`/movie/${movie.id}`} > <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} /> </Link>
         </div> 
         <h3 className={class1}> <FaStar></FaStar> <span> {movie.vote_average} </span> </h3>

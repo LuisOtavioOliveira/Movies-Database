@@ -74,7 +74,7 @@ const BigMovieCard = ({movie, favorite=false}) => {
   return (
     <div className='big'>
         <div className='norelative'>
-        <button onClick={handleFavoriteClick} className={`buttonfav bigmargin ${isFavorite && 'favorite'} `}> <FaStar></FaStar> </button>
+        <button aria-label="Favoritar" onClick={handleFavoriteClick} className={`buttonfav bigmargin ${isFavorite && 'favorite'} `}> <FaStar></FaStar> </button>
         <Link favorite={isFavorite} to={`/movie/${movie.id}`}> <img src={movie.poster_path !== null ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : `https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg` } alt={movie.title} /> </Link>
         </div>
         <div className='border'>

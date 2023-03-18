@@ -47,7 +47,7 @@ const Navbar = () => {
         <ul className='navbarul2'>
             <li className='fontweightnav'> <Link to='/favorites' className='white'>Favoritos </Link> </li>
             <li> 
-                {open ? <button onClick={() => setOpen(false)} className='buttonsearch'> <AiOutlineClose></AiOutlineClose>  </button> : <button onClick={() => setOpen(true)} className='buttonsearch'> <BsSearch className='searchbutton'></BsSearch> </button>}
+                {open ? <button aria-label="menu de pesquisa" onClick={() => setOpen(false)} className='buttonsearch'> <AiOutlineClose></AiOutlineClose>  </button> : <button aria-label="menu de pesquisa" onClick={() => setOpen(true)} className='buttonsearch'> <BsSearch className='searchbutton'></BsSearch> </button>}
                 
             </li>
         </ul>
@@ -58,13 +58,13 @@ const Navbar = () => {
         <ul>
           <li>
 
-           {open2 ? <button onClick={() => setOpen2(false)} className='buttonsearch'> <GiHamburgerMenu></GiHamburgerMenu> </button> : <button onClick={() => setOpen2(true)} className='buttonsearch'> <GiHamburgerMenu></GiHamburgerMenu> </button>} 
+           {open2 ? <button aria-label="Abrir menu" onClick={() => setOpen2(false)} className='buttonsearch'> <GiHamburgerMenu></GiHamburgerMenu> </button> : <button aria-label="Fechar menu" onClick={() => setOpen2(true)} className='buttonsearch'> <GiHamburgerMenu></GiHamburgerMenu> </button>} 
           </li>
          
         </ul>
         <ul>
         <li>
-          {open ? <button onClick={() => setOpen(false)} className='buttonsearch'> <AiOutlineClose></AiOutlineClose>  </button> : <button onClick={() => setOpen(true)} className='buttonsearch'> <BsSearch className='searchbutton'></BsSearch> </button>}
+          {open ? <button aria-label="Abrir menu de pesquisa" onClick={() => setOpen(false)} className='buttonsearch'> <AiOutlineClose></AiOutlineClose>  </button> : <button aria-label="Fechar menu de pesquisa" onClick={() => setOpen(true)} className='buttonsearch'> <BsSearch className='searchbutton'></BsSearch> </button>}
           </li>
         </ul>
     </div>
